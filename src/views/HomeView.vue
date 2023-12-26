@@ -8,13 +8,22 @@ import ListenCard from "../components/ListenCard.vue";
 <script lang="ts">
 import axios from "axios";
 
+interface Article {
+  id: number;
+  title: string;
+  image_url: string;
+  category: string;
+  published: string;
+  // Add other properties as needed
+}
+
 export default {
   name: "App",
   data() {
     return {
-      articles: {},
-      businessArticles: {},
-      entertainmentArticles: {},
+      articles: [] as Article[],
+      businessArticles: [] as Article[],
+      entertainmentArticles: [] as Article[],
     };
   },
   methods: {
@@ -49,11 +58,11 @@ export default {
   <div class="container">
     <div class="home-left">
       <MainArticle
-        :id="articles.at(0).id"
-        :title="articles.at(0).title"
-        :imageUrl="articles.at(0).image_url"
-        :category="articles.at(0).category"
-        :published="articles.at(0).published"
+        :id="articles[0].id"
+        :title="articles[0].title"
+        :imageUrl="articles[0].image_url"
+        :category="articles[0].category"
+        :published="articles[0].published"
       />
       <SecondaryArticle
         v-for="article in articles.slice(1, 11)"
@@ -65,11 +74,11 @@ export default {
         :published="article.published"
       />
       <MainArticle
-        :id="articles.at(12).id"
-        :title="articles.at(12).title"
-        :imageUrl="articles.at(12).image_url"
-        :category="articles.at(12).category"
-        :published="articles.at(12).published"
+        :id="articles[12].id"
+        :title="articles[12].title"
+        :imageUrl="articles[12].image_url"
+        :category="articles[12].category"
+        :published="articles[12].published"
       />
       <SecondaryArticle
         v-for="article in articles.slice(13, 23)"

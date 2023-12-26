@@ -15,7 +15,7 @@ export default {
   methods: {
     async getHealthArticles() {
       const { data } = await axios.get(
-        "http://journal-post-backend-8tbbg7yg6-miikisalminen.vercel.app/api/articles/?category=health"
+        "http://journal-post-backend.vercel.app/api/articles/?category=health"
       );
       this.healthArticles = data;
       console.log(data);

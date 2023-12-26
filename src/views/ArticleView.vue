@@ -18,7 +18,7 @@ export default {
   methods: {
     async getArticles() {
       const apiUrl =
-        "http://journal-post-backend-8tbbg7yg6-miikisalminen.vercel.app/api/article_by_id/?id=" +
+        "http://journal-post-backend.vercel.app/api/article_by_id/?id=" +
         this.$route.params.id;
       const { data } = await axios.get(apiUrl);
       this.article = data;

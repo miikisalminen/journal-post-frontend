@@ -30,7 +30,7 @@ export default {
   methods: {
     async searchArticles() {
       const apiUrl =
-        "http://journal-post-backend.vercel.app/api/search/?page=" +
+        "https://journal-post-backend.vercel.app/api/search/?page=" +
         this.page +
         "&query=" +
         this.currentSearchTerm;

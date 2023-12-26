@@ -15,7 +15,7 @@ export default {
   methods: {
     async getEntertainmentArticles() {
       const { data } = await axios.get(
-        "http://journal-post-backend.vercel.app/api/articles/?category=entertainment"
+        "https://journal-post-backend.vercel.app/api/articles/?category=entertainment"
       );
       this.entertainmentArticles = data;
       console.log(data);

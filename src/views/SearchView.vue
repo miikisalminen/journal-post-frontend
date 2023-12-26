@@ -5,13 +5,22 @@ import ListArticle from "../components/ListArticle.vue";
 <script lang="ts">
 import axios from "axios";
 
+interface Article {
+  id: number;
+  title: string;
+  image_url: string;
+  category: string;
+  published: string;
+  // Add other properties as needed
+}
+
 export default {
   name: "App",
   data() {
     return {
       searchTerm: "",
       currentSearchTerm: "",
-      searchedArticles: {},
+      searchedArticles: [] as Article[],
       next: "",
       previous: "",
       page: 1,
@@ -33,7 +42,7 @@ export default {
     },
 
     submitSearch() {
-      this.searchedArticles = {};
+      this.searchedArticles = [];
       this.page = 1;
       this.currentSearchTerm = this.searchTerm;
       this.searchArticles();
@@ -41,13 +50,13 @@ export default {
 
     incrementPage() {
       this.page++;
-      this.searchedArticles = {};
+      this.searchedArticles = [];
       this.searchArticles();
     },
     decrementPage() {
       if (this.previous) {
         this.page--;
-        this.searchedArticles = {};
+        this.searchedArticles = [];
         this.searchArticles();
       }
     },
@@ -80,9 +89,10 @@ export default {
     <input
       class="search-bar"
       :value="searchTerm"
-      @input="(e) => (searchTerm = e.target.value)"
+      @input="(e: Event) => (searchTerm = (e.target as HTMLInputElement)?.value || '')"
       placeholder="Search..."
     />
+
     <button
       class="search-button"
       @click="submitSearch"

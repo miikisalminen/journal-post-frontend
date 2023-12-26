@@ -6,29 +6,29 @@ import BaseView from "./BaseView.vue";
 import axios from "axios";
 
 export default {
-	name: "App",
-	data() {
-		return {
-			healthArticles: {},
-		};
-	},
-	methods: {
-		async getHealthArticles() {
-			const { data } = await axios.get(
-				"http://localhost:8000/api/articles/?category=health"
-			);
-			this.healthArticles = data;
-			console.log(data);
-		},
-	},
-	beforeMount() {
-		this.getHealthArticles();
-	},
+  name: "App",
+  data() {
+    return {
+      healthArticles: {},
+    };
+  },
+  methods: {
+    async getHealthArticles() {
+      const { data } = await axios.get(
+        "http://journal-post-backend-8tbbg7yg6-miikisalminen.vercel.app/api/articles/?category=health"
+      );
+      this.healthArticles = data;
+      console.log(data);
+    },
+  },
+  beforeMount() {
+    this.getHealthArticles();
+  },
 };
 </script>
 
 <template>
-	<div class="health">
-		<BaseView :articles="healthArticles" />
-	</div>
+  <div class="health">
+    <BaseView :articles="healthArticles" />
+  </div>
 </template>

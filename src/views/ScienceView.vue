@@ -6,29 +6,29 @@ import BaseView from "./BaseView.vue";
 import axios from "axios";
 
 export default {
-	name: "App",
-	data() {
-		return {
-			scienceArticles: {},
-		};
-	},
-	methods: {
-		async getScienceArticles() {
-			const { data } = await axios.get(
-				"http://localhost:8000/api/articles/?category=science"
-			);
-			this.scienceArticles = data;
-			console.log(data);
-		},
-	},
-	beforeMount() {
-		this.getScienceArticles();
-	},
+  name: "App",
+  data() {
+    return {
+      scienceArticles: {},
+    };
+  },
+  methods: {
+    async getScienceArticles() {
+      const { data } = await axios.get(
+        "http://journal-post-backend-8tbbg7yg6-miikisalminen.vercel.app/api/articles/?category=science"
+      );
+      this.scienceArticles = data;
+      console.log(data);
+    },
+  },
+  beforeMount() {
+    this.getScienceArticles();
+  },
 };
 </script>
 
 <template>
-	<div class="science">
-		<BaseView :articles="scienceArticles" />
-	</div>
+  <div class="science">
+    <BaseView :articles="scienceArticles" />
+  </div>
 </template>

@@ -29,19 +29,19 @@ export default {
   methods: {
     async getArticles() {
       const { data } = await axios.get(
-        "https://www.journal-post-backend.vercel.app/api/articles/"
+        "https://journal-post-backend.vercel.app/api/articles/"
       );
       this.articles = data;
     },
     async getBusinessArticles() {
       const { data } = await axios.get(
-        "https://www.journal-post-backend.vercel.app/api/articles/?category=business"
+        "https://journal-post-backend.vercel.app/api/articles/?category=business"
       );
       this.businessArticles = data;
     },
     async getEntertainmentArticles() {
       const { data } = await axios.get(
-        "https://www.journal-post-backend.vercel.app/api/articles/?category=entertainment"
+        "https://journal-post-backend.vercel.app/api/articles/?category=entertainment"
       );
       this.entertainmentArticles = data;
     },

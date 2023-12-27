@@ -1,5 +1,5 @@
 <script setup>
-import playbutton from "../assets/play_button.svg";
+import PlayButton from "./svg/PlayButton.vue";
 const props = defineProps({
   articles: Object,
 });
@@ -18,7 +18,7 @@ const props = defineProps({
           <img :src="article.image_url" />
           <h1>{{ article.title.slice(0, 30) }}...</h1>
           <p class="desc">{{ article.body.slice(0, 60) }}...</p>
-          <img :src="playbutton" class="play-button" />
+          <PlayButton class="play-button" />
           <p class="published">{{ article.published }}</p>
         </div>
       </div>

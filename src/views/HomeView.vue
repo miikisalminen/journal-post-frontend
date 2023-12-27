@@ -35,13 +35,13 @@ export default {
     },
     async getBusinessArticles() {
       const { data } = await axios.get(
-        "https://journal-post-backend.vercel.app/api/articles/?category=business"
+        "https://www.journal-post-backend.vercel.app/api/articles/?category=business"
       );
       this.businessArticles = data;
     },
     async getEntertainmentArticles() {
       const { data } = await axios.get(
-        "https://journal-post-backend.vercel.app/api/articles/?category=entertainment"
+        "https://www.journal-post-backend.vercel.app/api/articles/?category=entertainment"
       );
       this.entertainmentArticles = data;
     },

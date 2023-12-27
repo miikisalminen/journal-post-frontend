@@ -29,7 +29,7 @@ export default {
   methods: {
     async getArticles() {
       const { data } = await axios.get(
-        "https://journal-post-backend.vercel.app/api/articles/"
+        "https://www.journal-post-backend.vercel.app/api/articles/"
       );
       this.articles = data;
     },

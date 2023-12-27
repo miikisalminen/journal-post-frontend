@@ -18,7 +18,21 @@ const props = defineProps({
           <img :src="article.image_url" />
           <h1>{{ article.title.slice(0, 30) }}...</h1>
           <p class="desc">{{ article.body.slice(0, 60) }}...</p>
-          <PlayButton class="play-button" />
+          <svg
+            class="play-button"
+            width="34"
+            height="34"
+            viewBox="0 0 34 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M16.562 33.3633C25.686 33.3633 33.0825 25.9668 33.0825 16.8428C33.0825 7.71875 25.686 0.322266 16.562 0.322266C7.43799 0.322266 0.0415039 7.71875 0.0415039 16.8428C0.0415039 25.9668 7.43799 33.3633 16.562 33.3633ZM12.141 24.4998L25.4033 16.8428L12.141 9.18576V24.4998Z"
+              fill="#0077FF"
+            />
+          </svg>
           <p class="published">{{ article.published }}</p>
         </div>
       </div>

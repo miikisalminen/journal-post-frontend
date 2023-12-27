@@ -1,5 +1,5 @@
 <script setup>
-import placeholder from "../components/svg/PlaceholderImg.vue";
+import placeholder from "./svg/PlaceholderImg.vue";
 const props = defineProps({
   id: Number,
   title: String,

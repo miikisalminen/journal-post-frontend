@@ -1,5 +1,5 @@
 <script setup>
-import placeholder from "../components/svg/PlaceholderImg.vue";
+import placeholder from "../assets/placeholder_img.svg";
 function setPlaceholderImg(e) {
   e.target.src = placeholder;
 }

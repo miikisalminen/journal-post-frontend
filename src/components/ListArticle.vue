@@ -26,6 +26,7 @@ const props = defineProps({
 
 <style scoped>
 .flex-container {
+	margin-top: 10px;
 	display: flex;
 	padding-left: 10px;
 }

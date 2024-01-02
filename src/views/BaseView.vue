@@ -74,6 +74,7 @@ const props = defineProps({
 /* Small devices such as large phones (360px and up) */
 @media only screen and (min-width: 360px) {
 	.container {
+		margin-top: 110px;
 		display: flex;
 		justify-content: center;
 	}

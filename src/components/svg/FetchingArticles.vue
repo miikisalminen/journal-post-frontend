@@ -27,7 +27,7 @@
 <style scoped>
 .loading-img {
 	margin: auto;
-	margin-top: 100px;
+	margin-top: 200px;
 	text-align: center;
 }
 

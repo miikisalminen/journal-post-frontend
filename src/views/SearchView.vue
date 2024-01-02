@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import ListArticle from "../components/ListArticle.vue";
+
+import NotFound from "../components/svg/NotFound.vue";
+import FetchingArticles from "../components/svg/FetchingArticles.vue";
 </script>
 
 <script lang="ts">
@@ -112,11 +115,8 @@ export default {
 		>
 			Search
 		</button>
-		<p v-if="notFound">
-			Looks like we didnt find anything. Try using another
-			search term.
-		</p>
-		<p v-if="searching">Searching...</p>
+		<NotFound v-if="notFound" />
+		<FetchingArticles v-if="searching" />
 		<div
 			v-for="article in searchedArticles"
 			:key="article.id"
@@ -152,7 +152,7 @@ export default {
 <style scoped>
 .container {
 	width: 80%;
-	margin: auto;
+	margin: 120px auto;
 }
 
 h1 {

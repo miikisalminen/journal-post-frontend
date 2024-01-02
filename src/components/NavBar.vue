@@ -31,7 +31,11 @@ import MagnifyingIcon from "./svg/MagnifyingIcon.vue";
 /* Small devices such as large phones (360px and up) */
 @media only screen and (min-width: 360px) {
 	nav {
+		position: fixed;
+		top: 0;
+		z-index: 3;
 		width: 100vw;
+		height: 110px;
 		background-color: #ffff;
 		filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.25));
 	}
